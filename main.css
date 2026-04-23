@@ -1,0 +1,311 @@
+/* =====================
+   CSS-muuttujat (värit)
+   ===================== */
+:root {
+    --primary: #1a6b9c;
+    --primary-dark: #0d4d73;
+    --accent: #c8a951;
+    --dark-space: #0a0e1a;
+    --text-light: rgba(255, 255, 255, 0.75);
+}
+
+/* =====================
+   Yleinen tyyli
+   ===================== */
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Cinzel', serif;
+}
+
+hr.divider {
+    border: 0;
+    height: 2px;
+    background: var(--accent);
+    width: 60px;
+    margin: 1.5rem auto;
+    opacity: 1;
+}
+
+hr.divider-light {
+    background: rgba(255,255,255,0.5);
+}
+
+.text-white-75 {
+    color: var(--text-light);
+}
+
+.text-highlight {
+    color: var(--accent);
+}
+
+/* =====================
+   Navigaatio
+   ===================== */
+#mainNav {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+#mainNav.navbar-scrolled {
+    background-color: rgba(10, 14, 26, 0.97);
+}
+
+#mainNav .navbar-brand {
+    color: var(--accent);
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+}
+
+#mainNav .nav-link {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+#mainNav .nav-link:hover {
+    color: var(--accent);
+}
+
+/* =====================
+   Masthead
+   ===================== */
+.masthead {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 8, 20, 0.7) 0%,
+        rgba(10, 20, 50, 0.85) 100%
+    ),
+    url('assets/tahtijoukko.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Tähtien animaatio mastheadissa */
+.stars {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background:
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 30% 10%, white, transparent),
+        radial-gradient(1px 1px at 50% 35%, white, transparent),
+        radial-gradient(1px 1px at 70% 15%, white, transparent),
+        radial-gradient(1px 1px at 90% 30%, white, transparent),
+        radial-gradient(1px 1px at 20% 60%, white, transparent),
+        radial-gradient(1px 1px at 40% 75%, white, transparent),
+        radial-gradient(1px 1px at 60% 55%, white, transparent),
+        radial-gradient(1px 1px at 80% 70%, white, transparent),
+        radial-gradient(1px 1px at 15% 85%, white, transparent),
+        radial-gradient(1.5px 1.5px at 55% 5%, white, transparent),
+        radial-gradient(1.5px 1.5px at 35% 45%, white, transparent),
+        radial-gradient(1.5px 1.5px at 75% 50%, white, transparent),
+        radial-gradient(2px 2px at 25% 25%, rgba(200,169,81,0.8), transparent),
+        radial-gradient(2px 2px at 65% 80%, rgba(200,169,81,0.6), transparent);
+    pointer-events: none;
+}
+
+.display-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* =====================
+   Painikkeet
+   ===================== */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-xl {
+    padding: 1rem 2.5rem;
+}
+
+.btn-light {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+}
+
+/* =====================
+   Tähtitieteestä-osio (sininen)
+   ===================== */
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+/* =====================
+   Aiheet-osio
+   ===================== */
+.page-section {
+    padding: 6rem 0;
+}
+
+/* =====================
+   Galaksit-osio (tumma)
+   ===================== */
+.bg-dark-space {
+    background-color: var(--dark-space);
+    padding: 6rem 0;
+}
+
+.galaxy-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.galaxy-card:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--accent);
+}
+
+.galaxy-icon {
+    font-size: 2rem;
+    min-width: 3rem;
+    text-align: center;
+}
+
+/* =====================
+   Tähtien synty -aikajana
+   ===================== */
+.timeline {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+}
+
+.timeline-step {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -2.5rem;
+    width: 2rem;
+    height: 2rem;
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.timeline-content h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+/* =====================
+   Lomake
+   ===================== */
+.form-control {
+    border-radius: 4px;
+    border-color: #ccc;
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(26, 107, 156, 0.2);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+/* =====================
+   Footer
+   ===================== */
+footer {
+    background-color: var(--dark-space) !important;
+}
+
+footer a:hover {
+    color: var(--accent) !important;
+}
+
+.galaxy-thumb {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 6px;
+    min-width: 64px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.shadow-img {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.solar-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* =====================
+   Responsiivisuus
+   ===================== */
+@media (max-width: 768px) {
+    .masthead {
+        min-height: 100svh;
+    }
+
+    .display-title {
+        font-size: 2rem;
+    }
+
+    .galaxy-types {
+        margin-top: 2rem;
+    }
+}
